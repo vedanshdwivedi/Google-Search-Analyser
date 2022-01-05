@@ -16,6 +16,10 @@ def serve():
 	data = service.get_data_by_time(keyword)
 	return jsonify(data)
 
+@app.route("/", methods=["GET"])
+def index():
+	return {"name": "Hello World"}
+
 @app.route("/region", methods=["POST"])
 def serve_region():
 	keyword = request.json['keyword']
